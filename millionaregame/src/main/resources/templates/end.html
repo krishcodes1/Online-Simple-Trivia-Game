@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>End Page</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <style>
+        body {
+            /* Add a red gradient background with animation */
+            background: linear-gradient(270deg, #ff0000, #e0d5ca);
+            background-size: 200% 200%;
+            animation: gradient 3s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .container {
+            position: relative;
+            text-align: center;
+            width: 50%; /* Adjust as needed */
+            margin: 0 auto;
+        }
+        .text-box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.7); /* Adjust opacity as needed */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .image-box {
+            width: 100%;
+        }
+        .restart-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #4CAF50; /* Green */
+            color: white; /* White text */
+            border: none; /* No border */
+            text-align: center; /* Centered text */
+            text-decoration: none; /* No underline */
+            font-size: 16px; /* Adjust as needed */
+            transition-duration: 0.4s; /* Transition effect */
+            cursor: pointer; /* Add a mouse pointer on hover */
+            border-radius: 12px; /* Rounded corners */
+        }
+        .restart-button:hover {
+            background-color: #45a049; /* Darker green when mouse hovers over the button */
+        }
+    </style>
+</head>
+<body th:class="${won ? 'win' : 'lose'}">
+    <div class="center">
+        <div class="container">
+            <div class="text-box">
+                <h1 th:text="${won ? 'Congratulations on answering all questions right. You are officially $1,000,000 richer!' : 'You have lost. Better luck next time!'}"></h1>
+                <form action="/restart" method="post">
+                    <button type="submit" class="restart-button">Restart Game</button>
+                </form>
+            </div>
+            <div class="image-box">
+                <img th:src="${won ? '/images/check.jpg' : '/images/million.jpg'}" alt="Game Image">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

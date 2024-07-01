@@ -1,0 +1,209 @@
+
+@keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  body {
+    background: linear-gradient(45deg, #800080, #E6E6FA, #8830ec63);
+    background-size: 200% 200%;
+    animation: gradient 3s ease infinite;
+  }
+  
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.start-button {
+    padding: 15px 30px; /* Increased padding */
+    font-size: 25px; /* Reduced font size */
+    margin-top: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(to bottom, #AE8625, #F7EF8A, #D2AC47, #EDC967);
+    color: #74eafa;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 5px #999, 0 0 25px #FFD700, 0 0 5px #FFD700;
+    text-shadow: 2px 2px 4px #000000;
+    font-weight: bold;
+    white-space: nowrap; /* Prevents the text from wrapping onto the next line */
+}
+
+
+.start-button:hover {
+    background: linear-gradient(to bottom, #F7EF8A, #D2AC47, #EDC967, #AE8625); /* Darker golden gradient when mouse hovers over the button */
+    box-shadow: 0 5px #999, 0 0 35px #FFD700, 0 0 15px #FFD700; /* Increase glow when hovered */
+}
+
+.start-button:active {
+    background: linear-gradient(to bottom, #D2AC47, #EDC967, #AE8625, #F7EF8A); /* Even darker golden gradient when button is clicked */
+    box-shadow: 0 3px #666, 0 0 15px #FFD700, 0 0 5px #FFD700; /* Reduce glow when clicked */
+}
+
+.options {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.bubble-option {
+    display: inline-block;
+    padding: 20px 40px; /* Increased padding */
+    font-size: 20px; /* Increased font size */
+    margin: 20px;
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #2196F3;
+    border-radius: 50px; /* This makes the button pill-shaped */
+    text-align: center; /* This centers the text */
+    transition-duration: 0.4s; /* Transition effect */
+}
+
+.bubble-option:hover {
+    background-color: #00008B; /* Darker blue when mouse hovers over the button */
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); /* Shadow effect on hover */
+}
+
+
+
+.bubble-option input[type="radio"] {
+    display: none; /* This hides the default radio button */
+}
+
+.bubble-option input[type="radio"]:checked ~ .bubble-option {
+    background-color: #00ffb3;
+}
+
+
+/* Custom text box */
+input[type="text"] {
+    width: 200px;
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px;
+}
+
+.template {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.template.active {
+    opacity: 1;
+}
+
+/* Lifeline buttons */
+body .lifeline-button {
+    position: fixed; /* Position the buttons fixed */
+    bottom: 20px; /* Position them 20px from the bottom */
+    padding: 20px 40px; /* Decrease padding around the button text */
+    font-size: 20px; /* Decrease the size of the button text */
+    background: linear-gradient(to bottom, #AE8625, #F7EF8A, #D2AC47, #EDC967); /* Golden gradient */
+    color: #74eafa; /* Vibrant text color */
+    border: none;
+    border-radius: 20px; /* Increase border radius to make the button pill-shaped */
+    box-shadow: 0 3px #666, 0 0 10px #FFD700, 0 0 3px #FFD700; /* Shadow effect with glow */
+    text-shadow: 1px 1px 2px #000000; /* Text shadow effect */
+    font-weight: bold; /* Bold text */
+    z-index: 1; 
+}
+#fifty-fifty {
+    right: 120px; /* Position it 120px from the right */
+}
+
+#lifeline {
+    right: 20px; /* Position it 20px from the right */
+}
+
+.lifeline-button:hover {
+    /* Other styles */
+    box-shadow: 10px 10px 5px grey;
+}
+
+.submit-button {
+    background-color: #4CAF50; /* Green background */
+    border: none; /* No border */
+    color: white; /* White text */
+    padding: 15px 32px; /* Padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* No underline */
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer; /* Add a mouse pointer on hover */
+    border-radius: 50px; /* Rounded corners */
+    transition-duration: 0.4s; /* Transition effect */
+}
+
+.submit-button:hover {
+    background-color: #45a049; /* Green background on hover */
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); /* Shadow effect on hover */
+}
+
+h2 {
+    perspective: 150px; /* This gives a 3D-positioned element some perspective */
+    text-align: center;
+    font-size: 2.5em; /* Increased font size */
+    margin: 20px auto;
+    color: #fff;
+    position: relative;
+    padding: 20px;
+    background: #D8BFD8; /* Light purple background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 
+        0px 10px 10px rgba(0,0,0,0.2), /* Horizontal shadow, vertical shadow, blur, color */
+        0px 20px 20px rgba(0,0,0,0.2), /* You can stack multiple shadows */
+        0px 30px 30px rgba(0,0,0,0.2),
+        0px 40px 40px rgba(0,0,0,0.2);
+}
+#progressBar {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 25px;
+  }
+  
+  #progressBar div {
+    height: 30px;
+    width: 0;
+    background-color: #DAA520; /* Golden color */
+    border-radius: 25px;
+    text-align: right;
+    line-height: 30px;
+    color: black; /* Black text */
+  }
+
+  .bubble-option.correct {
+    background-color: #FFD700; /* Golden color */
+}
+.bubble-option.incorrect {
+    background-color: #FF0000; /* Red color */
+}
+
+
+
+
+  
+
+
